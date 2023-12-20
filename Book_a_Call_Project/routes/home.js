@@ -2,12 +2,10 @@ const path =  require('path');
 
 const express = require('express');
 
-const rootdir = require('../util/path');
+const homeController = require('../controllers/contact');
 
 const router = express.Router();
 
-router.get('/', (req, res, next)=>{
-    res.sendFile(path.join(rootdir, 'views', 'home.html'));
-});
+router.get('/', homeController.getHome);
 
 module.exports = router;
